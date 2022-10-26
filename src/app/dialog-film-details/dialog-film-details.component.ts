@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Optional } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { IFilm } from '../shared/models/film';
 
@@ -9,8 +9,8 @@ import { IFilm } from '../shared/models/film';
 })
 export class DialogFilmDetailsComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public film: IFilm) { }
-
+  constructor(@Optional() @Inject(MAT_DIALOG_DATA) public film: IFilm) { }
+  
   ngOnInit(): void {
     
   }

@@ -15,7 +15,7 @@ import { DialogFilmDetailsComponent } from '../dialog-film-details/dialog-film-d
 export class FilmsComponent implements AfterViewInit {
 
   films: IFilm[] = [];
-  displayedColumns: string[] = ['title', 'release_year', 'production_company', 'actions'];
+  displayedColumns: string[] = ['title', 'release_year', 'director', 'actions'];
   dataSource = new MatTableDataSource<IFilm>();
   
 
@@ -38,19 +38,24 @@ export class FilmsComponent implements AfterViewInit {
     this.filmsService.getFilms()
     .subscribe(response =>{
       if (response != null){
-        this.films = response;
-        this.dataSource = new MatTableDataSource<IFilm>(this.films);
-
-        this.dataSource.filterPredicate = function(data, filter: string): boolean {
-          return data.title.toLowerCase().includes(filter) || data.release_year.toString() === (filter) || data.production_company.toString().includes(filter);
-        };
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
+        this.updateTableData(response);
       }
     }, error => {
       console.log(error);
     });
   }
+
+  updateTableData(films : IFilm[]) {
+    this.films = films;
+    this.dataSource = new MatTableDataSource<IFilm>(this.films);
+
+    this.dataSource.filterPredicate = function(data, filter: string): boolean {
+      return data.title.toLowerCase().includes(filter) || data.release_year.toString().includes(filter) || data.director.toLowerCase().includes(filter);
+    };
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

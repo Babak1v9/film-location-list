@@ -17,7 +17,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { FooterComponent } from './core/footer/footer.component';
 import { MatIconModule } from '@angular/material/icon';
 import { DialogFilmDetailsComponent } from './dialog-film-details/dialog-film-details.component'
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,11 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatDialogModule
   ],
-  providers: [FilmsService],
+  providers: [
+    FilmsService, 
+    { provide: MAT_DIALOG_DATA, useValue: {} }, 
+    { provide: MatDialogRef, useValue: {} }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

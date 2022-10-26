@@ -5,17 +5,17 @@
         <!-- Film Title -->
         <mat-form-field appearance="fill">
             <mat-label>Titel</mat-label>
-            <input matInput [readonly]="true" [value]="film.title ?? '-'">
+            <input matInput [readonly]="true" [value]="film.title || '-'">
         </mat-form-field>
         <!-- Film Year -->
         <mat-form-field  appearance="fill">
             <mat-label>Erscheinungsjahr</mat-label>
-            <input matInput [readonly]="true" [value]="film.release_year ?? '-'">
+            <input matInput [readonly]="true" [value]="film.release_year || '-'">
         </mat-form-field>
         <!-- Film Locations -->
         <mat-form-field appearance="fill">
             <mat-label>Orte</mat-label>
-            <input matInput [readonly]="true" [value]="film.locations ?? '-'">
+            <input matInput [readonly]="true" [value]="film.locations || '-'">
         </mat-form-field>
     </div>
         <br>
@@ -23,17 +23,17 @@
         <!-- Film Fun Facts -->
         <mat-form-field appearance="fill">
             <mat-label>Fun Facts</mat-label>
-            <input matInput [readonly]="true" [value]="film.fun_facts ?? '-'">
+            <input matInput [readonly]="true" [value]="film.fun_facts || '-'">
         </mat-form-field>
         <!-- Film Prodcution Company -->
         <mat-form-field appearance="fill">
             <mat-label>Produktionsfirma</mat-label>
-            <input matInput [readonly]="true" [value]="film.production_company ?? '-'">
+            <input matInput [readonly]="true" [value]="film.production_company || '-'">
         </mat-form-field>
         <!-- Film Distributor -->
         <mat-form-field appearance="fill">
             <mat-label>Verkäufer</mat-label>
-            <input matInput [readonly]="true" [value]="film.distributor ?? '-'">
+            <input matInput [readonly]="true" [value]="film.distributor || '-'">
         </mat-form-field>
     </div>
     <br>
@@ -41,12 +41,12 @@
         <!-- Film Director -->
         <mat-form-field appearance="fill">
             <mat-label>Direktor</mat-label>
-            <input matInput [readonly]="true" [value]="film.director ?? '-'">
+            <input matInput [readonly]="true" [value]="film.director || '-'">
         </mat-form-field>
         <!-- Film Writer -->
         <mat-form-field appearance="fill">
             <mat-label>Autor</mat-label>
-            <input matInput [readonly]="true" [value]="film.writer ?? '-'">
+            <input matInput [readonly]="true" [value]="film.writer || '-'">
         </mat-form-field>
     </div>
     <br>
@@ -54,17 +54,17 @@
         <!-- Film Actor 1 -->
         <mat-form-field appearance="fill">
             <mat-label>Schauspieler 1</mat-label>
-            <input matInput [readonly]="true" [value]="film.actor_1 ?? '-'">
+            <input matInput [readonly]="true" [value]="film.actor_1 || '-'">
         </mat-form-field>
         <!-- Film Actor 2 -->
         <mat-form-field appearance="fill">
             <mat-label>Schauspieler 2</mat-label>
-            <input matInput [readonly]="true" [value]="film.actor_2 ?? '-'">
+            <input matInput [readonly]="true" [value]="film.actor_2 || '-'">
         </mat-form-field>
         <!-- Film Actor 3 -->
         <mat-form-field appearance="fill">
             <mat-label>Schauspieler 3</mat-label>
-            <input matInput [readonly]="true" [value]="film.actor_3 ?? '-'">
+            <input matInput [readonly]="true" [value]="film.actor_3 || '-'">
         </mat-form-field>
     </div>
 </div>
