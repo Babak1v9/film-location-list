@@ -1,0 +1,7 @@
+{
+    "/*":{
+        "target": "https://film-list-app-lukasr.netlify.app/",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}
