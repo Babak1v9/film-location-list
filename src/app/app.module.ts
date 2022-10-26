@@ -15,14 +15,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSortModule} from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { FooterComponent } from './core/footer/footer.component';
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
+import { DialogFilmDetailsComponent } from './dialog-film-details/dialog-film-details.component'
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     FilmsComponent,
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    DialogFilmDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { MatIconModule } from '@angular/material/icon'
     MatSortModule,
     MatPaginatorModule,
     MatIconModule,
+    MatDialogModule
   ],
   providers: [FilmsService],
   bootstrap: [AppComponent]
